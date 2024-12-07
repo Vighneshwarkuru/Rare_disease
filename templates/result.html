@@ -1,0 +1,82 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Response</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #f8bbd0, #f48fb1);
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.5s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hover-effect:hover {
+            background-color: #ec407a; /* Slightly darker pink */
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .depth-effect {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .title-depth {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .block-hover-effect:hover {
+            transform: scale(1.02);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="container fade-in depth-effect block-hover-effect">
+        <h1 class="text-3xl font-bold text-white bg-pink-500 py-2 rounded text-center mb-6 slide-up title-depth">DR's Response</h1>
+        <p class="mb-4 slide-up"><strong>Name: </strong>{{ name }}</p>
+        <p class="mb-4 slide-up"><strong>Age:</strong> {{ age }}</p>
+        <p class="mb-4 slide-up"><strong>Symptoms:</strong> {{ symptoms }}</p>
+        
+        <h2 class="text-2xl font-bold mb-4 slide-up">Diagnosis or Advice:</h2>
+        <p id="result" class="mb-4 slide-up" style="white-space: pre-wrap;">{{ result }}</p>
+
+        <a href="/" class="block text-center text-white bg-pink-500 py-2 rounded-lg font-bold text-lg slide-up hover-effect">Go back to the form</a>
+    </div>
+</body>

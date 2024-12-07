@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.LinkeR</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcccb; /* Light pink background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border: 2px solid #ff69b4; /* Hot pink border */
+            transition: transform 0.3s;
+        }
+
+        .form-container:hover {
+            transform: scale(1.02);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff69b4, #ff1493); /* Gradient title */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="radio"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #ff69b4; /* Hot pink focus border */
+            outline: none;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin: 0 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(90deg, #ff69b4, #ff1493); /* Gradient submit button */
+            color: white;
+            padding: 12px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #ff1493, #ff69b4); /* Reverse gradient on hover */
+            transform: translateY(-2px);
+        }
+
+        .gender-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .gender-options label {
+            flex: 1;
+            text-align: center;
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+        .gender-options input[type="radio"]:checked + label {
+            background: #d576a6; /* Hot pink for selected gender */
+            color: white;
+        }
+
+        .gender-options label:hover {
+            background: #ffb3d1; /* Light pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-title">Dr.LinkeR</div>
+        <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required placeholder="Enter your age">
+
+            <label>Gender:</label>
+            <div class="gender-options">
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="Male"> Male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="Female"> Female
+                </label>
+            </div>
+            <label for="history">Do have any previous history ?</label>
+            <input type="text" id="history" name="history">
+    
+            <label for="medication">Were you on any medications (present medication also)?</label>
+            <input type="text" id="medication" name="medication">
+    
+            <label for="symptoms">What are your current symptoms?</label>
+            <input type="text" id="symptoms" name="symptoms">
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
